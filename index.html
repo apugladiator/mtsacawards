@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#8b2031">
+<meta name="description" content="Check your completed and in-progress Electronics and Computer Technology courses to see which Mt. SAC awards you may apply for.">
+<title>Mt. SAC Electronics & Computer Technology Awards</title>
+<style>
+:root{--maroon:#8b2031;--dark:#5e1019;--gold:#f2c14e;--ink:#24252a;--muted:#60656d;--paper:#f6f5f2;--elec:#ccffcc;--cnet:#99ccff}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
+header{background:var(--maroon);color:#fff;padding:20px 16px 24px;border-bottom:5px solid var(--gold)}
+.head-inner,main,footer{max-width:1080px;margin:auto}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:48px;height:48px;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:20px;flex:none;color:var(--gold)}
+.brand small{display:block;letter-spacing:.06em;text-transform:uppercase;font-size:.72rem;opacity:.9}.brand strong{font-size:1.12rem}
+h1{font-size:clamp(1.55rem,5vw,2.25rem);line-height:1.12;margin:22px 0 8px}header p{margin:0;max-width:720px;color:#fff;font-size:1.02rem}
+main{padding:22px 14px 48px}.intro{background:#fff;border:1px solid #e2e0dc;border-radius:14px;padding:18px;margin-bottom:18px;box-shadow:0 3px 12px #00000008}.intro strong{color:var(--maroon)}
+.grid{display:grid;grid-template-columns:1fr;gap:16px}.course-panel{border-radius:14px;overflow:hidden;border:1px solid #c8cbd0;background:#fff}.course-panel h2{margin:0;padding:14px 16px;font-size:1.2rem}.elec h2{background:#a6e8a6}.cnet h2{background:#7db8ef}.course-list{padding:8px;display:grid;gap:7px}.course{display:flex;align-items:flex-start;gap:11px;padding:11px 10px;border-radius:9px;min-height:48px;cursor:pointer}.elec .course{background:var(--elec)}.cnet .course{background:var(--cnet)}.course input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--maroon)}.course span{font-weight:550}.course:focus-within{outline:3px solid var(--maroon);outline-offset:1px}
+.actions{display:flex;flex-direction:column;gap:10px;margin:18px 0}.btn{border:0;border-radius:10px;padding:15px 18px;font-weight:750;font-size:1rem;cursor:pointer}.primary{background:var(--maroon);color:white;box-shadow:0 3px 0 var(--dark)}.secondary{background:#e8e8e8;color:#333}.btn:focus-visible,a:focus-visible{outline:3px solid #326195;outline-offset:3px}
+.results{display:none;margin-top:24px}.results.show{display:block}.results h2{font-size:1.55rem;margin:0 0 6px}.result-intro{color:var(--muted);margin:0 0 16px}.apply-note{background:#fff4d6;border-left:5px solid var(--gold);padding:14px;border-radius:8px;margin:14px 0 18px}.apply-note strong{display:block;margin-bottom:4px}.award{background:white;border:1px solid #dedede;border-radius:12px;padding:16px;margin:10px 0}.award.ready{border-left:5px solid #24834a}.award.close{border-left:5px solid #d49a18}.award h3{font-size:1.08rem;margin:0 0 6px}.status{font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:#207443}.close .status{color:#93620b}.award p{margin:7px 0;color:#444}.missing{font-size:.9rem;color:#5c6068}.award a{color:var(--maroon);font-weight:750}.none{background:white;padding:16px;border-radius:12px}
+footer{padding:18px 14px 30px;color:var(--muted);font-size:.82rem}footer a{color:var(--maroon)}
+@media(min-width:700px){main{padding:30px 24px 60px}.grid{grid-template-columns:1fr 1fr;align-items:start}.actions{flex-direction:row}.actions .btn{min-width:220px}.course-list{grid-template-columns:1fr}.intro{padding:22px}}
+</style>
+</head>
+<body>
+<header><div class="head-inner">
+<div class="brand"><div class="brand-mark" aria-hidden="true">Mt</div><div><small>Mt. San Antonio College</small><strong>Electronics & Computer Technology</strong></div></div>
+<h1>Discover the awards you may qualify for</h1>
+<p>Mark ALL the classes that you will complete this semester AND classes you have already completed. This will determine which awards you qualify for or are close to qualifying for.</p>
+</div></header>
+<main>
+<section class="intro"><strong>You can apply before the semester ends.</strong> Include courses you are currently taking as well as courses you have already completed. You do not have to wait until your current classes are finished to apply for an award.</section>
+<form id="courseForm">
+<div class="grid">
+<section class="course-panel elec"><h2>ELEC Courses</h2><div class="course-list" id="elecList"></div></section>
+<section class="course-panel cnet"><h2>CNET Courses</h2><div class="course-list" id="cnetList"></div></section>
+</div>
+<div class="actions"><button class="btn primary" type="submit">Show My Awards</button><button class="btn secondary" type="reset">Clear selections</button></div>
+</form>
+<section class="results" id="results" aria-live="polite">
+<h2>Your award results</h2><p class="result-intro" id="summary"></p>
+<div class="apply-note"><strong>Don't wait until the end of the semester!</strong>If an award is listed as available now, you can apply now—even if you are still completing other classes this semester. The application takes less than a minute.<br><br><a href="https://prodapx.mtsac.edu/prodapex/f?p=152:LOGIN_DESKTOP:12109703931008:::" target="_blank" rel="noopener">Apply for awards through Mt. SAC</a></div>
+<div id="awardList"></div>
+</section>
+</main>
+<footer>Mt. San Antonio College · Electronics and Computer Technology Department<br>For official program and award requirements, confirm with the department or college. <a href="https://www.mtsac.edu/" target="_blank" rel="noopener">Mt. SAC website</a> · <a href="https://www.mtsac.edu/marketing/identity.html" target="_blank" rel="noopener">College identity guide</a></footer>
+<script>
+const courses={
+elec:[
+["ELEC 10","Intro to Mechatronics"],["ELEC 11","Technical Applications in Microcomputers"],["ELEC 12","Computer Simulation and Troubleshooting"],["ELEC 50A","DC Electronics"],["ELEC 50B","AC Electronics"],["ELEC 51","Semiconductor Devices"],["ELEC 53","Communication Systems"],["ELEC 54A","Industrial Electronics"],["ELEC 54B","Industrial Systems"],["ELEC 55","Microwave Communications"],["ELEC 56","Digital Electronics"],["ELEC 61","Electronic Assembly and Fabrication"],["ELEC 62","Surface Mount Assembly and Fabrication"],["ELEC 74","Microcontroller Systems"],["ELEC 76","FCC GROL"],["TECH 60","Customer Relations"]],
+cnet:[["CNET 50","PC Servicing"],["CNET 52","PC Operating Systems"],["CNET 54","PC Troubleshooting"],["CNET 56","Computer Networks"],["CNET 58","Server Systems"],["CNET 60","A+ Certification Prep"],["CNET 62","Network+ Certification Prep"],["CNET 64","Server+ Certification Prep"],["CNET 66","Security+ Certification Prep"]]
+};
+const units={"ELEC 10":2,"ELEC 11":3,"ELEC 12":2,"ELEC 51":4,"ELEC 53":4,"ELEC 54A":4,"ELEC 54B":3,"ELEC 55":4,"ELEC 61":3,"ELEC 62":2,"ELEC 74":4,"ELEC 76":2,"TECH 60":2,"CNET 56":4};
+const all=[...courses.elec,...courses.cnet].map(x=>x[0]);
+function renderCourses(key){document.getElementById(key+"List").innerHTML=courses[key].map(([code,name])=>'<label class="course"><input type="checkbox" name="course" value="'+code+'"><span><b>'+code+'</b> – '+name+'</span></label>').join("")}
+renderCourses("elec");renderCourses("cnet");
+const awards=[
+{name:"Electronics Technology Level 1 Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56"]},
+{name:"Electronics Technology Level 2 Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56"],units:12,unitPool:Object.keys(units),unitAward:true},
+{name:"Electronics Communications Certificate",req:["ELEC 50A","ELEC 50B","ELEC 51","ELEC 53","ELEC 55","ELEC 76","CNET 56"]},
+{name:"Electronic Assembly and Fabrication Certificate",req:["ELEC 61","ELEC 10","ELEC 62"]},
+{name:"Electronics and Computer Engineering Technology Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60","ELEC 51","ELEC 54A","ELEC 54B","ELEC 12","ELEC 74","ELEC 61","ELEC 53","ELEC 55"],extra:"If you have also completed the required general education courses, you can apply for the A.S. Degree in Electronics and Computer Engineering Technology."},
+{name:"A.S. Degree in Electronics Engineering Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 51","ELEC 61","ELEC 54B"],extra:"You must also complete the general education requirements, CISP 31, CISP 31L, PHYS 2AG, PHYS 2BG, and MATH 150."},
+{name:"Computer Networking Technology Fundamental Certificate",req:["CNET 50","CNET 52","CNET 54"]},
+{name:"Computer Networking Technology Industry Certifications Certificate",req:["CNET 60","CNET 62","CNET 64","CNET 66"]},
+{name:"Computer and Networking Technology Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60",...courses.cnet.map(x=>x[0])],extra:"If you have also completed the required general education courses, you can apply for the A.S. Degree in Computer and Networking Technology."}
+];
+function missingFor(req,selected){return req.filter(x=>!selected.has(x))}
+function showResults(selected){
+ const host=document.getElementById("awardList");host.innerHTML="";
+ let ready=0,close=0;
+ awards.forEach(a=>{
+  let missing=missingFor(a.req,selected),isReady=missing.length===0,remainingUnits=0,unitMissing=[];
+  if(a.unitAward){remainingUnits=Object.entries(units).filter(([c])=>selected.has(c)).reduce((s,[c,u])=>s+u,0);unitMissing=Object.entries(units).filter(([c])=>!selected.has(c));isReady=isReady&&remainingUnits>=a.units;}
+  let near=false,detail="";
+  if(a.unitAward){
+   let short=Math.max(0,a.units-remainingUnits);
+   near=!isReady&&missing.length===0&&short<=4;
+   detail="You have "+remainingUnits+" of the required 12 additional units. "+(isReady?"":short+" more eligible units are needed.");
+   if(near){let sorted=unitMissing.slice().sort((x,y)=>x[1]-y[1]);let picks=[],sum=0;for(const [c,u] of sorted){if(sum>=short)break;picks.push(c+" ("+u+" units)");sum+=u;}detail+=" Consider: "+picks.join(", ")+". These are suggestions; any eligible combination totaling at least 12 units works.";}
+  }else{
+   near=!isReady&&missing.length<=2;
+   detail=isReady?"You have selected all listed required courses.":(near?"You are "+missing.length+" course"+(missing.length===1?"":"s")+" away.":"Still needed: ")+missing.join(", ")+".";
+  }
+  if(isReady)ready++;else if(near)close++;
+  if(!isReady&&!near)return;
+  const card=document.createElement("article");card.className="award "+(isReady?"ready":"close");
+  card.innerHTML='<div class="status">'+(isReady?"Available to apply now":"Almost there")+'</div><h3>'+a.name+'</h3><p>'+detail+'</p>'+(a.extra?'<p><b>Also:</b> '+a.extra+'</p>':"");
+  host.appendChild(card);
+ });
+ document.getElementById("summary").textContent=ready+" award"+(ready===1?" is":"s are")+" available now"+(close?", and "+close+" more "+(close===1?"is":"are")+" within one or two classes.":".");
+ if(!host.children.length)host.innerHTML='<div class="none"><b>No awards matched yet.</b><p>Keep selecting completed and in-progress courses. Awards will appear here when you qualify or are one or two courses away.</p></div>';
+ document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:"smooth",block:"start"});
+}
+document.getElementById("courseForm").addEventListener("submit",e=>{e.preventDefault();showResults(new Set([...document.querySelectorAll('input[name="course"]:checked')].map(x=>x.value)));});
+document.getElementById("courseForm").addEventListener("reset",()=>{document.getElementById("results").classList.remove("show");});
+</script>
+</body></html>
