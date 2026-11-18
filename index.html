@@ -16,7 +16,7 @@ h1{font-size:clamp(1.55rem,5vw,2.25rem);line-height:1.12;margin:22px 0 8px;paddi
 main{padding:22px 14px 48px}.intro{background:#fff;border:1px solid #e2e0dc;border-radius:14px;padding:18px;margin-bottom:18px;box-shadow:0 3px 12px #00000008}.intro strong{color:var(--maroon)}
 .grid{display:grid;grid-template-columns:1fr;gap:16px}.course-panel{border-radius:14px;overflow:hidden;border:1px solid #c8cbd0;background:#fff}.course-panel h2{margin:0;padding:14px 16px;font-size:1.2rem}.elec h2{background:#a6e8a6}.cnet h2{background:#7db8ef}.course-list{padding:8px;display:grid;gap:7px}.course{display:flex;align-items:flex-start;gap:11px;padding:11px 10px;border-radius:9px;min-height:48px;cursor:pointer}.elec .course{background:var(--elec)}.cnet .course{background:var(--cnet)}.course input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--maroon)}.course span{font-weight:550}.course:focus-within{outline:3px solid var(--maroon);outline-offset:1px}
 .actions{display:flex;flex-direction:column;gap:10px;margin:18px 0}.btn{border:0;border-radius:10px;padding:15px 18px;font-weight:750;font-size:1rem;cursor:pointer}.primary{background:var(--maroon);color:white;box-shadow:0 3px 0 var(--dark)}.secondary{background:#e8e8e8;color:#333}.btn:focus-visible,a:focus-visible{outline:3px solid #326195;outline-offset:3px}
-.results{display:none;margin-top:24px}.results.show{display:block}.results h2{font-size:1.55rem;margin:0 0 6px}.result-intro{color:var(--muted);margin:0 0 16px}.apply-note{background:#fff4d6;border-left:5px solid var(--gold);padding:14px;border-radius:8px;margin:14px 0 18px}.apply-note strong{display:block;margin-bottom:4px}.award{background:white;border:1px solid #dedede;border-radius:12px;padding:16px;margin:10px 0}.award.ready{border-left:5px solid #24834a}.award.close{border-left:5px solid #d49a18}.award h3{font-size:1.08rem;margin:0 0 6px}.status{font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:#207443}.close .status{color:#93620b}.award p{margin:7px 0;color:#444}.missing{font-size:.9rem;color:#5c6068}.award a{color:var(--maroon);font-weight:750}.none{background:white;padding:16px;border-radius:12px}
+.results{display:none;margin-top:24px}.results.show{display:block}.results h2{font-size:1.55rem;margin:0 0 6px}.result-intro{color:var(--muted);margin:0 0 16px}.apply-note{background:#fff4d6;border-left:5px solid var(--gold);padding:14px;border-radius:8px;margin:14px 0 18px}.apply-note strong{display:block;margin-bottom:4px}.award{background:white;border:1px solid #dedede;border-radius:12px;padding:16px;margin:10px 0}.award.ready{border-left:5px solid #24834a}.award.close{border-left:5px solid #d49a18}.award h3{font-size:1.08rem;margin:8px 0 6px}.status{font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;color:#207443}.close .status{color:#93620b}.award p{margin:7px 0;color:#444}.missing{font-size:.9rem;color:#5c6068}.award a{color:var(--maroon);font-weight:750}.apply-btn{display:inline-block;margin-top:8px;padding:11px 15px;border-radius:9px;background:var(--maroon);color:#fff!important;text-decoration:none;font-weight:750}.none{background:white;padding:16px;border-radius:12px}
 footer{padding:18px 14px 30px;color:var(--muted);font-size:.82rem}footer a{color:var(--maroon)}
 @media(max-width:520px){.brand-logo{width:88px}.brand{gap:8px}.brand strong{font-size:.9rem}.brand small{font-size:.6rem}.mascot{width:66px;max-height:90px}h1{padding-right:52px}}\n@media(min-width:700px){main{padding:30px 24px 60px}.grid{grid-template-columns:1fr 1fr;align-items:start}.actions{flex-direction:row}.actions .btn{min-width:220px}.course-list{grid-template-columns:1fr}.intro{padding:22px}}
 </style>
@@ -25,10 +25,9 @@ footer{padding:18px 14px 30px;color:var(--muted);font-size:.82rem}footer a{color
 <header><div class="head-inner">
 <div class="brand"><img class="brand-logo" src="https://www.mtsac.edu/marketing/brand/Logo_MtSAC_FullColor.png" alt="Mt. SAC logo"><div><small>Mt. San Antonio College</small><strong>Electronics & Computer Technology</strong></div></div><img class="mascot" src="https://www.mtsac.edu/marketing/brand/mascot-rizzly.png" alt="Rizzly the Grizzly mascot">
 <h1>Discover the awards you may qualify for</h1>
-<p>Mark ALL the classes that you will complete this semester AND classes you have already completed. This will determine which awards you qualify for or are close to qualifying for.</p>
 </div></header>
 <main>
-<section class="intro"><strong>You can apply before the semester ends.</strong> Include courses you are currently taking as well as courses you have already completed. You do not have to wait until your current classes are finished to apply for an award.</section>
+<section class="intro"><strong>How to use this page:</strong> Mark ALL the classes that you will complete this semester AND classes you have already completed. This will determine which awards you qualify for or are close to qualifying for.<p><strong>You can apply before the semester ends.</strong> Include courses you are currently taking as well as courses you have already completed. You do not have to wait until your current classes are finished to apply for an award.</p></section>
 <form id="courseForm">
 <div class="grid">
 <section class="course-panel elec"><h2>ELEC Courses</h2><div class="course-list" id="elecList"></div></section>
@@ -38,7 +37,7 @@ footer{padding:18px 14px 30px;color:var(--muted);font-size:.82rem}footer a{color
 </form>
 <section class="results" id="results" aria-live="polite">
 <h2>Your award results</h2><p class="result-intro" id="summary"></p>
-<div class="apply-note"><strong>Don't wait until the end of the semester!</strong>If an award is listed as available now, you can apply now—even if you are still completing other classes this semester. The application takes less than a minute.<br><br><a href="https://prodapx.mtsac.edu/prodapex/f?p=152:LOGIN_DESKTOP:12109703931008:::" target="_blank" rel="noopener">Apply for awards through Mt. SAC</a></div>
+<div class="apply-note"><strong>Don't wait until the end of the semester!</strong>If an award is listed as available now, you can apply now—even if you are still completing other classes this semester. The application takes less than a minute.</div>
 <div id="awardList"></div>
 </section>
 </main>
@@ -59,7 +58,7 @@ const awards=[
 {name:"Electronics Communications Certificate",req:["ELEC 50A","ELEC 50B","ELEC 51","ELEC 53","ELEC 55","ELEC 76","CNET 56"]},
 {name:"Electronic Assembly and Fabrication Certificate",req:["ELEC 61","ELEC 10","ELEC 62"]},
 {name:"Electronics and Computer Engineering Technology Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60","ELEC 51","ELEC 54A","ELEC 54B","ELEC 12","ELEC 74","ELEC 61","ELEC 53","ELEC 55"],extra:"If you have also completed the required general education courses, you can apply for the A.S. Degree in Electronics and Computer Engineering Technology."},
-{name:"A.S. Degree in Electronics Engineering Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 51","ELEC 61","ELEC 54B"],extra:"You must also complete the general education requirements, CISP 31, CISP 31L, PHYS 2AG, PHYS 2BG, and MATH 150."},
+{name:"A.S. Degree in Electronics Engineering Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 51","ELEC 61","ELEC 54B"],extra:"You must also complete the general education requirements AND CISP 31, CISP 31L, PHYS 2AG, PHYS 2BG, and MATH 150."},
 {name:"Computer Networking Technology Fundamental Certificate",req:["CNET 50","CNET 52","CNET 54"]},
 {name:"Computer Networking Technology Industry Certifications Certificate",req:["CNET 60","CNET 62","CNET 64","CNET 66"]},
 {name:"Computer and Networking Technology Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60",...courses.cnet.map(x=>x[0])],extra:"If you have also completed the required general education courses, you can apply for the A.S. Degree in Computer and Networking Technology."}
@@ -84,7 +83,7 @@ function showResults(selected){
   if(isReady)ready++;else if(near)close++;
   if(!isReady&&!near)return;
   const card=document.createElement("article");card.className="award "+(isReady?"ready":"close");
-  card.innerHTML='<div class="status">'+(isReady?(a.extra?"Department course requirements met":"Available to apply now"):"Almost there")+'</div><h3>'+a.name+'</h3><p>'+detail+'</p>'+(a.extra?'<p><b>Also:</b> '+a.extra+'</p>':"");
+  card.innerHTML='<div class="status">'+(isReady?(a.extra?"Department course requirements met":"Available to apply now"):"Almost there")+'</div><h3>'+a.name+'</h3><p>'+detail+'</p>'+(isReady&&!a.extra?'<a class="apply-btn" href="https://prodapx.mtsac.edu/prodapex/f?p=152:LOGIN_DESKTOP:12109703931008:::" target="_blank" rel="noopener">Apply for awards through Mt. SAC</a>':"")+(a.extra?'<p><b>Also:</b> '+a.extra+'</p>':"");
   host.appendChild(card);
  });
  document.getElementById("summary").textContent=ready+" award"+(ready===1?" is":"s are")+" available now"+(close?", and "+close+" more "+(close===1?"is":"are")+" within one or two classes.":".");
