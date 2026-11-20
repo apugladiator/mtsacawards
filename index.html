@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#8b2031">
-<meta name="description" content="Check your completed and in-progress Electronics and Computer Technology courses to see which Mt. SAC awards you may apply for.">
-<title>Mt. SAC Electronics & Computer Technology Awards</title>
+<meta name="description" content="Check your completed and in-progress Electronics and Computer Technology courses to see which Mt. SAC degrees and certificates you may apply for.">
+<title>Mt. SAC Electronics & Computer Technology Degrees and Certificates</title>
 <style>
 :root{--maroon:#8b2031;--dark:#5e1019;--gold:#f2c14e;--ink:#24252a;--muted:#60656d;--paper:#f6f5f2;--elec:#ccffcc;--cnet:#99ccff}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -32,25 +32,25 @@ footer{padding:18px 14px 30px;color:var(--muted);font-size:.82rem}footer a{color
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <header><div class="head-inner">
 <div class="brand"><img class="brand-logo" src="https://www.mtsac.edu/marketing/brand/Logo_MtSAC_FullColor.png" alt="Mt. San Antonio College logo"><div><small>Mt. San Antonio College</small><strong>Electronics & Computer Technology</strong></div></div><img class="mascot" src="https://www.mtsac.edu/marketing/brand/mascot-rizzly.png" alt="">
-<h1>Discover the awards you may qualify for</h1>
+<h1>Discover the degrees and certificates you may qualify for</h1>
 </div></header>
 <main id="main-content">
-<section class="intro" aria-label="Instructions"><strong>How to use this page:</strong> Mark ALL the classes that you will complete this semester AND classes you have already completed. This will determine which awards you qualify for or are close to qualifying for.<p><strong>You can apply before the semester ends.</strong> You do not have to wait until your current classes are finished to apply for an award.</p>
+<section class="intro" aria-label="Instructions"><strong>How to use this page:</strong> Mark ALL the classes that you will complete this semester AND classes you have already completed. This will determine which degrees and certificates you qualify for or are close to qualifying for.<p><strong>You can apply before the semester ends.</strong> You do not have to wait until your current classes are finished to apply for a degree or certificate.</p>
 <p>If you wish to see a list of all certificates and degrees our program offers along with their required classes, <a href="https://www.mtsac.edu/electronics/pdf/Certificate_Matrix__2025_ACCESSIBLE_VERSION.pdf" target="_blank" rel="noopener">click here</a>.</p></section>
 <form id="courseForm">
 <div class="grid">
 <section class="course-panel elec" aria-labelledby="elec-heading"><h2 id="elec-heading">ELEC Courses</h2><div class="course-list" id="elecList"></div></section>
 <section class="course-panel cnet" aria-labelledby="cnet-heading"><h2 id="cnet-heading">CNET Courses</h2><div class="course-list" id="cnetList"></div></section>
 </div>
-<div class="actions"><button class="btn primary" type="submit">Show My Awards</button><button class="btn secondary" type="reset">Clear selections</button></div>
+<div class="actions"><button class="btn primary" type="submit">Show My Degrees and Certificates</button><button class="btn secondary" type="reset">Clear selections</button></div>
 </form>
 <section class="results" id="results" aria-labelledby="results-heading">
-<h2 id="results-heading">Your award results</h2><p class="result-intro" id="summary" role="status" aria-live="polite" aria-atomic="true"></p>
-<div class="apply-note"><strong>Don't wait until the end of the semester!</strong>If an award is listed as available now, you can apply now—even if you are still completing other classes this semester. The application takes less than a minute.</div>
+<h2 id="results-heading">Your Degrees and Certificates Results</h2><p class="result-intro" id="summary" role="status" aria-live="polite" aria-atomic="true"></p>
+<div class="apply-note"><strong>Don't wait until the end of the semester!</strong>If a degree or certificate is listed as available now, you can apply now—even if you are still completing other classes this semester. The application takes less than a minute.</div>
 <div id="awardList"></div>
 </section>
 </main>
-<footer>Mt. San Antonio College · Electronics and Computer Technology Department<br>For official program and award requirements, confirm with the department or college. <a href="https://www.mtsac.edu/" target="_blank" rel="noopener">Mt. SAC website</a> · <a href="https://www.mtsac.edu/marketing/identity.html" target="_blank" rel="noopener">College identity guide</a></footer>
+<footer>Mt. San Antonio College · Electronics and Computer Technology Department<br>This website is not an Official Degree or Certificate Audit. Students should check with Counseling for questions and official requirements. <a href="https://www.mtsac.edu/" target="_blank" rel="noopener">Mt. SAC website</a> · <a href="https://www.mtsac.edu/marketing/identity.html" target="_blank" rel="noopener">College identity guide</a></footer>
 <script>
 const courses={
 elec:[
@@ -66,7 +66,8 @@ const awards=[
 {name:"Electronics Technology Level 2 Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56"],units:12,unitPool:Object.keys(units),unitAward:true},
 {name:"Electronics Communications Certificate",req:["ELEC 50A","ELEC 50B","ELEC 51","ELEC 53","ELEC 55","ELEC 76","CNET 56"]},
 {name:"Electronic Assembly and Fabrication Certificate",req:["ELEC 61","ELEC 10","ELEC 62"]},
-{name:"Electronics and Computer Engineering Technology Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60","ELEC 51","ELEC 54A","ELEC 54B","ELEC 12","ELEC 74","ELEC 61","ELEC 53","ELEC 55"],extra:"If you have also completed the required general education courses, you can apply for the A.S. Degree in Electronics and Computer Engineering Technology."},
+{name:"Electronics and Computer Engineering Technology Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60","ELEC 51","ELEC 54A","ELEC 54B","ELEC 12","ELEC 74","ELEC 61","ELEC 53","ELEC 55"],extra:"If you have completed these 13 courses and the required general education courses, you can apply for the A.S. Degree in Electronics and Computer Engineering Technology."},
+{name:"A.S. Degree in Electronics and Computer Engineering Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60","ELEC 51","ELEC 54A","ELEC 54B","ELEC 12","ELEC 74","ELEC 61","ELEC 53","ELEC 55"],extra:"You must also complete the required general education courses to earn this A.S. Degree."},
 {name:"A.S. Degree in Electronics Engineering Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 51","ELEC 61","ELEC 54B"],extra:"You must also complete the general education requirements AND CISP 31, CISP 31L, PHYS 2AG, PHYS 2BG, and MATH 150."},
 {name:"Computer Networking Technology Fundamental Certificate",req:["CNET 50","CNET 52","CNET 54"]},
 {name:"Computer Networking Technology Industry Certifications Certificate",req:["CNET 60","CNET 62","CNET 64","CNET 66"]},
@@ -92,11 +93,11 @@ function showResults(selected){
   if(isReady)ready++;else if(near)close++;
   if(!isReady&&!near)return;
   const card=document.createElement("article");card.className="award "+(isReady?"ready":"close");
-  card.innerHTML='<div class="status">'+(isReady?(a.extra?"Department course requirements met":"Available to apply now"):"Almost there")+'</div><h3>'+a.name+'</h3><p>'+detail+'</p>'+(isReady&&!a.extra?'<a class="apply-btn" href="https://prodapx.mtsac.edu/prodapex/f?p=152:LOGIN_DESKTOP:12109703931008:::" target="_blank" rel="noopener">Apply for awards through Mt. SAC</a>':"")+(a.extra?'<p><b>Also:</b> '+a.extra+'</p>':"");
+  card.innerHTML='<div class="status">'+(isReady?(a.extra?"Department course requirements met":"Available to apply now"):"Almost there")+'</div><h3>'+a.name+'</h3><p>'+detail+'</p>'+(isReady&&!a.extra?'<a class="apply-btn" href="https://prodapx.mtsac.edu/prodapex/f?p=152:LOGIN_DESKTOP:12109703931008:::" target="_blank" rel="noopener">Apply through Mt. SAC</a>':"")+(a.extra?'<p><b>Also:</b> '+a.extra+'</p>':"");
   host.appendChild(card);
  });
- document.getElementById("summary").textContent=ready+" award"+(ready===1?" is":"s are")+" available now"+(close?", and "+close+" more "+(close===1?"is":"are")+" within one or two classes.":".");
- if(!host.children.length)host.innerHTML='<div class="none"><b>No awards matched yet.</b><p>Keep selecting completed and in-progress courses. Awards will appear here when you qualify or are one or two courses away.</p></div>';
+ document.getElementById("summary").textContent=ready+" degree or certificate"+(ready===1?" is":"s are")+" available now"+(close?", and "+close+" more "+(close===1?"is":"are")+" within one or two classes.":".");
+ if(!host.children.length)host.innerHTML='<div class="none"><b>No degrees or certificates matched yet.</b><p>Keep selecting completed and in-progress courses. Results will appear here when you qualify or are one or two courses away.</p></div>';
  document.getElementById("results").classList.add("show");document.getElementById("results").scrollIntoView({behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"});
 }
 document.getElementById("courseForm").addEventListener("submit",e=>{e.preventDefault();showResults(new Set([...document.querySelectorAll('input[name="course"]:checked')].map(x=>x.value)));});
