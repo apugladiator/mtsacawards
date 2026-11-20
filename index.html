@@ -85,7 +85,7 @@ function showResults(selected){
    let short=Math.max(0,a.units-remainingUnits);
    const unitCoursesNeeded=unitMissing.slice().sort((x,y)=>y[1]-x[1]);let unitCount=0,unitTotal=0;for(const [,u] of unitCoursesNeeded){if(unitTotal>=short)break;unitTotal+=u;unitCount++;}near=!isReady&&(missing.length+unitCount)<=2;
    detail="This certificate requires 12 additional units beyond ELEC 50A, ELEC 50B and ELEC 56. You have "+remainingUnits+" of the required 12 additional units. "+(short>0?short+" more eligible units are needed.":(missing.length?"You have enough additional units; complete the required core courses listed below.":"You have met the additional-unit requirement."));
-   if(near){let sorted=unitMissing.slice().sort((x,y)=>y[1]-x[1]);let picks=[],sum=0;for(const [c,u] of sorted){if(sum>=short)break;picks.push(c+" ("+u+" units)");sum+=u;}detail+=(missing.length?" Required courses still missing: "+missing.join(", ")+".":"")+" Consider: "+picks.join(", ")+". Any eligible combination totaling at least 12 units works.";}
+   if(near){detail+=(missing.length?" Required courses still missing: "+missing.join(", ")+".":"")+" The following courses are eligible to count towards these units: "+Object.entries(units).map(([course,unitCount])=>course+" ("+unitCount+" units)").join(", ")+ ".";}
   }else{
    near=!isReady&&missing.length<=2;
    detail=isReady?"You have selected all listed required courses.":(near?"You are "+missing.length+" course"+(missing.length===1?"":"s")+" away.":"Still needed: ")+missing.join(", ")+".";
