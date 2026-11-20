@@ -93,7 +93,7 @@ function showResults(selected){
   if(isReady)ready++;else if(near)close++;
   if(!isReady&&!near)return;
   const card=document.createElement("article");card.className="award "+(isReady?"ready":"close");
-  card.innerHTML='<div class="status">'+(isReady?(a.extra?"Department course requirements met":"Available to apply now"):"Almost there")+'</div><h3>'+a.name+'</h3><p>'+detail+'</p>'+(isReady?'<a class="apply-btn" href="https://prodapx.mtsac.edu/prodapex/f?p=152:LOGIN_DESKTOP:12109703931008:::" target="_blank" rel="noopener">Apply through Mt. SAC</a>':"")+(a.extra?'<p><b>Also:</b> '+a.extra+'</p>':"");
+  card.innerHTML='<div class="status">'+(isReady?(a.extra?"Department course requirements met":"Available to apply now"):"Almost there")+'</div><h3>'+a.name+'</h3><p>'+detail+'</p>'+(isReady&&!a.name.startsWith("A.S. Degree")?'<a class="apply-btn" href="https://prodapx.mtsac.edu/prodapex/f?p=152:LOGIN_DESKTOP:12109703931008:::" target="_blank" rel="noopener">Apply through Mt. SAC</a>':"")+(a.extra?'<p><b>Also:</b> '+a.extra+'</p>':"");
   host.appendChild(card);
  });
  document.getElementById("summary").textContent=ready+" degree or certificate"+(ready===1?" is":"s are")+" available now"+(close?", and "+close+" more "+(close===1?"is":"are")+" within one or two classes.":".");
