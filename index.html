@@ -71,7 +71,8 @@ const awards=[
 {name:"A.S. Degree in Electronics Engineering Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 51","ELEC 61","ELEC 54B"],extra:"You must also complete the general education requirements AND CISP 31, CISP 31L, PHYS 2AG, PHYS 2BG, and MATH 150."},
 {name:"Computer Networking Technology Fundamental Certificate",req:["CNET 50","CNET 52","CNET 54"]},
 {name:"Computer Networking Technology Industry Certifications Certificate",req:["CNET 60","CNET 62","CNET 64","CNET 66"]},
-{name:"Computer and Networking Technology Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60",...courses.cnet.map(x=>x[0])],extra:"If you have also completed the required general education courses, you can apply for the A.S. Degree in Computer and Networking Technology."}
+{name:"Computer and Networking Technology Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60",...courses.cnet.map(x=>x[0])] },
+{name:"A.S. Degree in Computer and Networking Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60",...courses.cnet.map(x=>x[0])],extra:"You must also complete the required general education courses to earn this A.S. Degree. Once you have verified with a counselor that you have completed the required GE courses, you can apply."}
 ];
 function missingFor(req,selected){return req.filter(x=>!selected.has(x))}
 function showResults(selected){
