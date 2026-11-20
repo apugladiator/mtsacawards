@@ -67,7 +67,7 @@ const awards=[
 {name:"Electronics Communications Certificate",req:["ELEC 50A","ELEC 50B","ELEC 51","ELEC 53","ELEC 55","ELEC 76","CNET 56"]},
 {name:"Electronic Assembly and Fabrication Certificate",req:["ELEC 61","ELEC 10","ELEC 62"]},
 {name:"Electronics and Computer Engineering Technology Certificate",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60","ELEC 51","ELEC 54A","ELEC 54B","ELEC 12","ELEC 74","ELEC 61","ELEC 53","ELEC 55"]},
-{name:"A.S. Degree in Electronics and Computer Engineering Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60","ELEC 51","ELEC 54A","ELEC 54B","ELEC 12","ELEC 74","ELEC 61","ELEC 53","ELEC 55"],extra:"You must also complete the required general education courses to earn this A.S. Degree."},
+{name:"A.S. Degree in Electronics and Computer Engineering Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 11","TECH 60","ELEC 51","ELEC 54A","ELEC 54B","ELEC 12","ELEC 74","ELEC 61","ELEC 53","ELEC 55"],extra:"You must also complete the required general education courses to earn this A.S. Degree. Once you have verified with a counselor that you have completed the required GE courses, you can apply."},
 {name:"A.S. Degree in Electronics Engineering Technology",req:["ELEC 50A","ELEC 50B","ELEC 56","ELEC 51","ELEC 61","ELEC 54B"],extra:"You must also complete the general education requirements AND CISP 31, CISP 31L, PHYS 2AG, PHYS 2BG, and MATH 150."},
 {name:"Computer Networking Technology Fundamental Certificate",req:["CNET 50","CNET 52","CNET 54"]},
 {name:"Computer Networking Technology Industry Certifications Certificate",req:["CNET 60","CNET 62","CNET 64","CNET 66"]},
@@ -93,7 +93,7 @@ function showResults(selected){
   if(isReady)ready++;else if(near)close++;
   if(!isReady&&!near)return;
   const card=document.createElement("article");card.className="award "+(isReady?"ready":"close");
-  card.innerHTML='<div class="status">'+(isReady?(a.extra?"Department course requirements met":"Available to apply now"):"Almost there")+'</div><h3>'+a.name+'</h3><p>'+detail+'</p>'+(isReady&&!a.name.startsWith("A.S. Degree")?'<a class="apply-btn" href="https://prodapx.mtsac.edu/prodapex/f?p=152:LOGIN_DESKTOP:12109703931008:::" target="_blank" rel="noopener">Apply through Mt. SAC</a>':"")+(a.extra?'<p><b>Also:</b> '+a.extra+'</p>':"");
+  card.innerHTML='<div class="status">'+(isReady?(a.extra?"Department course requirements met":"Available to apply now"):"Almost there")+'</div><h3>'+a.name+'</h3><p>'+detail+'</p>'+(isReady?'<a class="apply-btn" href="https://prodapx.mtsac.edu/prodapex/f?p=152:LOGIN_DESKTOP:12109703931008:::" target="_blank" rel="noopener">Apply through Mt. SAC</a>':"")+(a.extra?'<p><b>Also:</b> '+a.extra+'</p>':"");
   host.appendChild(card);
  });
  document.getElementById("summary").textContent=ready+" degree or certificate"+(ready===1?" is":"s are")+" available now"+(close?", and "+close+" more "+(close===1?"is":"are")+" within one or two classes.":".");
